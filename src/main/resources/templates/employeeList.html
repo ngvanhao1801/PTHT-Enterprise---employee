@@ -37,16 +37,16 @@
 <br>
 <form action="search" method="GET">
     <p style = "text-align: center;" >
-        Tìm kiếm: <input type="text" name="tenPhongBan" placeholder="Nhập tên phòng ban"/>
-    <input type="text" name="tuoi" placeholder="Nhập tuổi nhân viên"/>
-   <input type="submit" value="Search" class="add-button" />
+        <input type="text" name="tenPhongBan" placeholder="Nhập tên phòng ban"/>
+        <input type="text" name="tuoi" placeholder="Nhập tuổi nhân viên"/>
+        <input style="background-color: rgba(255,153,0,0.35)" type="submit" value="Search" class="add-button" />
     </p>
 </form>
 
 <div class="container my-5 col-md-8">
-    <table class="table  table-striped table-hover">
+    <table class="table table-bordered table-striped table-hover">
         <thead>
-        <tr>
+        <tr style="text-align: center">
             <th scope="col">Mã Nhân Viên</th>
             <th scope="col">Tên Nhân Viên</th>
             <th scope="col">Tên Phòng Ban</th>
@@ -55,14 +55,15 @@
             <th scope="col">Chức Năng</th>
         </tr>
         </thead>
-        <tbody>
+        <tbody style="text-align: center">
         <tr th:each="e :${employee}">
             <td th:text="${e.maNv}"></td>
             <td th:text="${e.tenNhanVien}"></td>
             <td th:text="${e.tenPhongBan}"></td>
             <td th:text="${e.gioiTinh}"></td>
             <td th:text="${e.tuoi}"></td>
-            <td><a class="btn btn-secondary btn-sm" th:href="@{/mylist/{id}(id=${e.id})}">Add To MyEmployee</a>
+            <td>
+                <a class="btn btn-secondary btn-sm" th:href="@{/mylist/{id}(id=${e.id})}">Add To MyEmployee</a>
                 <a style="color:blue" th:href="@{/editEmployee/{id}(id=${e.id})}">
                     <i class="fa-solid fa-pen-to-square ms-4"></i>
                 </a>
