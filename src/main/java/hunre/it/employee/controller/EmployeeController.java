@@ -1,9 +1,7 @@
 package hunre.it.employee.controller;
 
 import hunre.it.employee.entity.Employee;
-import hunre.it.employee.entity.MyEmployeeList;
 import hunre.it.employee.service.EmployeeService;
-import hunre.it.employee.service.MyEmployeeListService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,9 +16,6 @@ public class EmployeeController {
 
 	@Autowired
 	private EmployeeService service;
-
-	@Autowired
-	private MyEmployeeListService myEmployeeListService;
 
 	@GetMapping("/")
 	public String home() {
@@ -44,22 +39,6 @@ public class EmployeeController {
 		service.save(e);
 		List<String> ca = new ArrayList<>();
 		return "redirect:/available_employees";
-	}
-
-	@GetMapping("/my_employees")
-	public String getMyEmployees(Model model) {
-		List<MyEmployeeList> list = myEmployeeListService.getAllMyEmployees();
-		model.addAttribute("employee", list);
-		return "myEmployee";
-	}
-
-	@RequestMapping("/mylist/{id}")
-	public String getMyList(@PathVariable("id") int id) {
-		Employee e = service.getEmployeeById(id);
-		MyEmployeeList me = new
-				MyEmployeeList(e.getId(), e.getMaNv(), e.getTenNhanVien(), e.getTenPhongBan(), e.getGioiTinh(), e.getTuoi());
-		myEmployeeListService.saveMyEmployees(me);
-		return "redirect:/my_employees";
 	}
 
 	@RequestMapping("/editEmployee/{id}")

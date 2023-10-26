@@ -16,21 +16,20 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item"><a class="nav-link active text-white" aria-current="page" href="/">Home</a></li>
-                <li class="nav-item"><a class="nav-link text-white" href="available_employees">Available Employees</a></li>
-                <li class="nav-item"><a class="nav-link text-white" href="my_employees">My Employees</a></li>
+                <li class="nav-item"><a class="nav-link active text-white" aria-current="page" href="/">Trang chủ</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="available_employees">Danh sách nhân viên</a></li>
             </ul>
             <div>
-                <a class="nav-link text-white" href="employee_register">New Employee Register</a>
+                <a class="nav-link text-white" href="employee_register">Thêm mới nhân viên</a>
             </div>
         </div>
     </div>
 </nav>
 <div class="container my-5 p-5" style="border:1px solid black;">
-    <h4 class="text-center">New Employee Register</h4>
+    <h4 class="text-center">Đăng ký nhân viên mới</h4>
     <form class="col-md-4 offset-md-4" th:action="@{/save}" method="post">
         <div class="mb-3">
-            <label for="maNv" class="form-label">Mã nhân viên </label>
+            <label for="maNv" class="form-label">Mã Nhân Viên </label>
             <input type="text" class="form-control" name="maNv" placeholder="Nhập mã nhân viên">
         </div>
         <div class="mb-3">
@@ -42,7 +41,7 @@
             <input type="text" class="form-control" name="tenPhongBan" placeholder="Nhập mã phòng ban">
         </div>
         <div class="mb-3">
-            <label for="gioiTinh" class="form-label">Giới tính </label>
+            <label for="gioiTinh" class="form-label">Giới Tính </label>
             <input type="text" class="form-control" name="gioiTinh" placeholder="Nhập giới tính">
         </div>
         <div class="mb-3">

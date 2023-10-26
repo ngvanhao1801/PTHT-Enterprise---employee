@@ -18,17 +18,14 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active text-white" aria-current="page" href="/">Home</a>
+                    <a class="nav-link active text-white" aria-current="page" href="/">Trang chủ</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="available_employees">Available Employees</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-white" href="my_employees">My Employees</a>
+                    <a class="nav-link text-white" href="available_employees">Danh sách nhân viên</a>
                 </li>
             </ul>
             <div>
-                <a class="nav-link text-white" href="employee_register">New Employee Register</a>
+                <a class="nav-link text-white" href="employee_register">Thêm mới nhân viên</a>
             </div>
         </div>
     </div>
@@ -62,11 +59,11 @@
             <td th:text="${e.gioiTinh}"></td>
             <td th:text="${e.tuoi}"></td>
             <td>
-                <a class="btn btn-secondary btn-sm" th:href="@{/mylist/{id}(id=${e.id})}">Add To MyEmployee</a>
                 <a style="color:blue" th:href="@{/editEmployee/{id}(id=${e.id})}">
                     <i class="fa-solid fa-pen-to-square ms-4"></i>
                 </a>
-                <a style="color:red" th:href="@{/deleteEmployee/{id}(id=${e.id})}">
+                <a style="color:red" th:href="@{/deleteEmployee/{id}(id=${e.id})}"
+                   onclick="if (!(confirm('Bạn có chắc chắn muốn xóa thông tin sinh viên này?'))) return false">
                     <i class="fa-solid fa-trash-can ms-4"></i>
                 </a>
             </td>
