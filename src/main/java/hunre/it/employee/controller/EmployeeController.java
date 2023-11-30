@@ -37,7 +37,6 @@ public class EmployeeController {
 	@PostMapping("/save")
 	public String addEmployee(@ModelAttribute Employee e) {
 		service.save(e);
-		List<String> ca = new ArrayList<>();
 		return "redirect:/available_employees";
 	}
 
@@ -58,8 +57,8 @@ public class EmployeeController {
 	public String searchEmployee(@RequestParam("tenPhongBan") String tenPhongBan,
 	                             @RequestParam("tuoi") int tuoi,
 	                             Model theModel) {
-		List<Employee> theSach = service.searchEmployee(tenPhongBan, tuoi);
-		theModel.addAttribute("employee", theSach);
+		List<Employee> theEmployee = service.searchEmployee(tenPhongBan, tuoi);
+		theModel.addAttribute("employee", theEmployee);
 		return "search-employee";
 	}
 

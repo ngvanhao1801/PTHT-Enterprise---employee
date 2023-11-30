@@ -56,6 +56,9 @@
                 </a>
             </td>
         </tr>
+        <tr th:if="${employee == null or #lists.isEmpty(employee)}" style="color: red">
+            <td colspan="6">Không có kết quả tương ứng</td>
+        </tr>
         </tbody>
     </table>
 </div>

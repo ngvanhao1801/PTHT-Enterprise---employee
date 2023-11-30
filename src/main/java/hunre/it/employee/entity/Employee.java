@@ -1,6 +1,7 @@
 package hunre.it.employee.entity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotEmpty;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -17,14 +18,19 @@ public class Employee {
   @GeneratedValue(strategy= GenerationType.IDENTITY)
   private int id;
 
+  @NotEmpty
   private String maNv;
 
+  @NotEmpty
   private String tenNhanVien;
 
+  @NotEmpty
   private String tenPhongBan;
 
+  @NotEmpty
   private String gioiTinh;
 
+  @NotEmpty
   private int tuoi;
 
 }

@@ -34,7 +34,7 @@
     <form class="col-md-4 offset-md-4" th:action="@{/save}" method="post" th:object="${employee}">
         <input type="hidden" name="id" th:value="${employee.id}" />
         <div class="mb-3">
-            <label for="maNv" class="form-label">Mã Nhân Niên </label>
+            <label for="maNv" class="form-label">Mã Nhân Viên </label>
             <input type="text" class="form-control" name="maNv" th:value="${employee.maNv}">
         </div>
         <div class="mb-3">
@@ -53,9 +53,8 @@
             <label for="tuoi" class="form-label">Tuổi </label>
             <input type="text" class="form-control" name="tuoi" th:value="${employee.tuoi}">
         </div>
-        <center>
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </center>
+        <button type="submit" class="btn btn-primary" href="available_employees" style="border-radius: 8px"> Back to list employees </button>
+        <button type="submit" class="btn btn-primary" style="border-radius: 8px; margin-left: 143px">Submit</button>
     </form>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
